@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Too-Da!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div id = "fullshell">
+        <div id = "top">
+            <div id="tooda"><h1 id=><i>Too-Da!</i></h1></div>
+                <div id = "additem">
+                    <form id ="additemform" method = 'POST' action="/">
+                        <input id="todotextbox" type="text" name="item">
+                        <input id="submitbutton" type="Submit" value="+">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    </form>
+                </div>
+        </div>
+            <div id = "todolist">
+                <table id ="todotable">
+                    {% for item in items %}
+                        <tr class="rowrow">
+                            <td class="listitem"><p class="listfont">{{item.item}}</p></td>
+                            <td>
+                                <form method = "POST" action="./delete">
+                                    <input class="toodabutton" type="submit" value="Too-Da!">
+                                    <input type="hidden" value="{{item.item}}" name="item">
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        <p>score:</p>
+    </div>
+
+</body>
+
+
+</html>

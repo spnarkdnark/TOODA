@@ -1,0 +1,103 @@
+
+#fullshell{
+    background-color:black;
+    color:black;
+    width:50%;
+    height:50%;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    margin:auto;
+    }
+
+#tooda{
+    text-align:center;
+    color:white;
+    font-size:20px;
+    background-color:black;
+
+}
+
+#top{
+    background-color:black;
+
+}
+
+#additem{
+    text-align:center;
+}
+
+#additemform{
+
+}
+
+.submitbutton{
+    background-color:black;
+    border: none;
+    padding:10px;
+    color:lightblue;
+}
+
+.toodabutton{
+    height:100%;
+    color:white;
+    background-color:black;
+    border:none;
+    height:50px;
+}
+
+#todotextbox{
+width:75%;
+padding:10px;
+}
+
+#todolist{
+    width:100%;
+}
+
+#todotable{
+    width:100%;
+    text-align:right;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 75%;
+  height: 15px;
+  border-radius: 5px;
+  background: white;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin: 15px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #white;
+  cursor: pointer;
+}
+
+.listitem{
+    text-align:left;
+    margin-left:20px;
+}
+
+.rowrow{
+    background-color:white;
+}
+
+.listfont{
+
+}
