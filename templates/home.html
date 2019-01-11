@@ -6,35 +6,79 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body>
-    <div id = "fullshell">
-        <div id = "top">
-            <div id="tooda"><h1 id=><i>Too-Da!</i></h1></div>
-                <div id = "additem">
-                    <form id ="additemform" method = 'POST' action="/">
-                        <input id="todotextbox" type="text" name="item">
-                        <input id="submitbutton" type="Submit" value="+">
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                    </form>
-                </div>
+<body id="body">
+
+<div id="fullsheet">
+    <div id="myDiv" class="Header">
+        <h2 id="TooDaTitle"><i>Too-Da!</i></h2>
+        <p>do this...</p>
+        <div id="inputform">
+        <input type="text" id="myInput">
         </div>
-            <div id = "todolist">
-                <table id ="todotable">
-                    {% for item in items %}
-                        <tr class="rowrow">
-                            <td class="listitem"><p class="listfont">{{item.item}}</p></td>
-                            <td>
-                                <form method = "POST" action="./delete">
-                                    <input class="toodabutton" type="submit" value="Too-Da!">
-                                    <input type="hidden" value="{{item.item}}" name="item">
-                                </form>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </table>
-            </div>
-        <p>score:</p>
+        <p>in... <span id="minutes"></span>       minutes</p>
+        <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+        <span onclick="newElement()" id="addBtn"></span>
     </div>
+    <div id="uList">
+       <ul id="myUL"></ul>
+    </div>
+</div>
+
+
+
+<script>
+    function newElement(){
+    console.log('working');
+    var li = document.createElement('li');
+    var inputValue = document.getElementById('myInput').value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+
+    if (inputValue === "") {
+        alert("you must add something!");
+    } else {
+        document.getElementById('myUL').appendChild(li);
+    }
+
+    document.getElementById('myInput').value = "";
+
+    var span = document.createElement('SPAN');
+    var txt = document.createTextNode('\u00D7');
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+var input = document.getElementById('body')
+input.addEventListener("keyup", function(event){
+    event.preventDefault();
+    if (event.keyCode === 13){
+        document.getElementById('addBtn').click();
+        console.log('yes');
+        document.getElementById('myRange').value = 50;
+        document.getElementById('minutes').innerHTML = 50;
+        }
+        });
+
+var slider = document.getElementById('myRange');
+var output = document.getElementById('minutes');
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    console.log('debug')
+    output.innerHTML = this.value;
+    }
+
+
+</script>
 
 </body>
 
