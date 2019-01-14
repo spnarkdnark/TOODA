@@ -54,7 +54,7 @@ function Draw(){
         ctx.fillStyle = p.color;
         ctx.translate(p.x+(p.size/2),p.y+(p.size/2));
         ctx.rotate(p.rotation);
-        ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);
+        ctx.fillRect(-p.size/2,-p.size/2,p.size*3,p.size);
 
         ctx.restore();
 
@@ -67,7 +67,7 @@ function Piece(x,y){
 
     this.x = x;
     this.y = y;
-    this.size = (Math.random()*.5 +.75)*15;
+    this.size = (Math.random()*.5 +.75)*10;
     this.gravity = (Math.random()*.5 +.75)*.1;
     this.rotation = (Math.PI * 2) * Math.random();
     this.rotationSpeed = (Math.PI * 2) * (Math.random()-.5) * .001;

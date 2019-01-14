@@ -14,14 +14,18 @@
     margin-bottom:5px;
 }
 
+#inputform{
+    width:100%;
+}
+
 #myInput{
     border: 3px solid black;
     background-color:white;
     font-style:strong;
-    width:100%;
     padding-top:5px;
     padding-bottom:5px;
     font-size:35px;
+    width:100%;
 }
 
 p{
@@ -56,8 +60,8 @@ p{
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
+  width: 40px; /* Set a specific slider handle width */
+  height: 40px; /* Slider handle height */
   background: black; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
